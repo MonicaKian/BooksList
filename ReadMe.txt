@@ -1,0 +1,1 @@
+This is a small project creating a list of items/books with ASP.Net and MVC
