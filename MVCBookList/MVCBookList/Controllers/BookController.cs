@@ -33,14 +33,10 @@ namespace MVCBookList.Controllers
 
         // POST: Book/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Book bo)
         {
             try
             {
-                Book bo = new Book();
-                bo.Name = collection["Name"];
-                string desc = collection["Description"];
-                bo.Description = desc;
                 booList.Add(bo);
                 return RedirectToAction("Index");
             }
