@@ -24,11 +24,9 @@ namespace MVCBookList.Controllers
         // GET: Book/ShowSearchForm
         public ActionResult ShowSearchForm()
         {
-            var books = from e in db.Books
-                        orderby e.Id
-                        select e;
+ 
 
-            return View(books);
+            return View();
         }
         // GET: Book/Details/5
         public ActionResult Details(int id)
