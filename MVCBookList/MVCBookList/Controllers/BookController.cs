@@ -40,6 +40,7 @@ namespace MVCBookList.Controllers
             try
             {
                 db.Books.Add(bo);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -67,6 +68,7 @@ namespace MVCBookList.Controllers
                 if (TryUpdateModel(book))
                 {
                     //To Do:- database code
+                    db.SaveChanges();
                     return RedirectToAction("Index");
                 }
                 return View(book);
