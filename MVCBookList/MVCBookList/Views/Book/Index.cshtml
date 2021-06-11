@@ -15,8 +15,8 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table class="table">
-        <tr>
+    <table class="table table-striped" style="">
+        <tr class="table-dark">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -28,13 +28,13 @@
     
     @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="table-light">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td class="table-light">
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
+            <td class="table-light">
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id=item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.Id })
