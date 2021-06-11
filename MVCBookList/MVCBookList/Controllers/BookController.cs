@@ -10,6 +10,7 @@ namespace MVCBookList.Controllers
 {
     public class BookController : Controller
     {
+        private BoDBContext db = new BoDBContext();
         // GET: Book
         public ActionResult Index()
         {
