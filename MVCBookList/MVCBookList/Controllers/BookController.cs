@@ -37,14 +37,18 @@ namespace MVCBookList.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Book bo = new Book();
+                bo.Name = collection["Name"];
+                string desc = collection["Description"];
+                bo.Description = desc;
+                booList.Add(bo);
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
+
         }
 
         // GET: Book/Edit/5
@@ -131,7 +135,7 @@ namespace MVCBookList.Controllers
         }
 
 
-     public static List<Book> booList = new List<Book>{
+        public static List<Book> booList = new List<Book>{
        new Book{
          Id = 1,
          Name = "Be Kind",
@@ -160,7 +164,7 @@ namespace MVCBookList.Controllers
          Description = "The question is: Who has the better deal? Story maestro Daniel Pinkwater collaborates once again with the gifted " +
          "illustrator Jack E. Davis for a boy-and - dog escapade that's sure to set tails a-wagging"
           },
-        
+
 
     };
 
