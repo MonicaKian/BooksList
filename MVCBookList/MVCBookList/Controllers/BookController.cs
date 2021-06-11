@@ -29,11 +29,11 @@ namespace MVCBookList.Controllers
             return View();
         }
         // POST: Book/ShowSearchResults
-        public ActionResult ShowSearchResults()
+        public string ShowSearchResults(string SearchPhrase)
         {
 
 
-            return View();
+            return "You entered "+SearchPhrase;
         }
         // GET: Book/Details/5
         public ActionResult Details(int id)
