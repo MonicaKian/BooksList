@@ -29,12 +29,16 @@ namespace MVCBookList.Controllers
             return View();
         }
         // POST: Book/ShowSearchResults
-        public string ShowSearchResults(string SearchPhrase)
+        public ActionResult ShowSearchResults(string SearchPhrase)
         {
+            var books = from e in db.Books
+                        where e.Description.Contains(SearchPhrase)||e.Name.Contains(SearchPhrase)
+                        orderby e.Id
+                        select e;
 
-
-            return "You entered "+SearchPhrase;
+            return View("Index",books);
         }
+
         // GET: Book/Details/5
         public ActionResult Details(int id)
         {
