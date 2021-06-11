@@ -3,11 +3,6 @@
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/jqueryval")
 
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
         <h4>Search for an item or a Book</h4>
         <hr />
@@ -25,7 +20,7 @@
             </div>
         </form>
     </div>
-}
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
