@@ -1,6 +1,7 @@
 ﻿using MVCBookList.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -169,4 +170,12 @@ namespace MVCBookList.Controllers
     };
 
     }
+
+    public class BoDBContext : DbContext
+    {
+        public BoDBContext()
+        { }
+        public DbSet<Book> Books { get; set; }
+    }
+
 }
