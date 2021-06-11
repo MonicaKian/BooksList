@@ -14,7 +14,7 @@ namespace MVCBookList.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            var books = from e in booList
+            var books = from e in db.Books
                         orderby e.Id
                         select e;
 
@@ -39,7 +39,7 @@ namespace MVCBookList.Controllers
         {
             try
             {
-                booList.Add(bo);
+                db.Books.Add(bo);
                 return RedirectToAction("Index");
             }
             catch
@@ -52,8 +52,8 @@ namespace MVCBookList.Controllers
         // GET: Book/Edit/5
         public ActionResult Edit(int id)
         {
-            List<Book> empList = GetBookList();
-            var book = empList.Single(m => m.Id == id);
+           
+            var book = db.Books.Single(m => m.Id == id);
             return View(book);
         }
 
@@ -63,7 +63,7 @@ namespace MVCBookList.Controllers
         {
             try
             {
-                var book = booList.Single(m => m.Id == id);
+                var book = db.Books.Single(m => m.Id == id);
                 if (TryUpdateModel(book))
                 {
                     //To Do:- database code
