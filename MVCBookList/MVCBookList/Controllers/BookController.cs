@@ -89,8 +89,9 @@ namespace MVCBookList.Controllers
 
         // POST: Book/Delete/5
         [HttpPost]
-        public ActionResult Delete(Book bo)
+        public ActionResult Delete(int id, FormCollection collection)
         {
+            var bo = db.Books.Single(m => m.Id == id);
             try
             {
                 db.Books.Remove(bo);
