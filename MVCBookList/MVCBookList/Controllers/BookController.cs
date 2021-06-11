@@ -12,11 +12,12 @@ namespace MVCBookList.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            var books = from e in GetBookList()
+            var books = from e in booList
                         orderby e.Id
                         select e;
 
             return View(books);
+
 
         }
 
