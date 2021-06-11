@@ -28,6 +28,13 @@ namespace MVCBookList.Controllers
 
             return View();
         }
+        // POST: Book/ShowSearchResults
+        public ActionResult ShowSearchResults()
+        {
+
+
+            return View();
+        }
         // GET: Book/Details/5
         public ActionResult Details(int id)
         {
