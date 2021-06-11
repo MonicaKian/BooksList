@@ -12,7 +12,12 @@ namespace MVCBookList.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            return View();
+            var books = from e in GetBookList()
+                        orderby e.Id
+                        select e;
+
+            return View(books);
+
         }
 
         // GET: Book/Details/5
@@ -98,7 +103,7 @@ namespace MVCBookList.Controllers
          Name = "Be Kind",
          Description = "From asking the new girl to play to standing up for someone being bullied, this moving story explores what kindness is, " +
          "and how any act, big or small, can make a difference—or at least help a friend."
-         
+
       },
 
       new Book{
