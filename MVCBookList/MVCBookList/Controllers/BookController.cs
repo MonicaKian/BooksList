@@ -65,9 +65,13 @@ namespace MVCBookList.Controllers
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                var book = booList.Single(m => m.Id == id);
+                if (TryUpdateModel(book))
+                {
+                    //To Do:- database code
+                    return RedirectToAction("Index");
+                }
+                return View(book);
             }
             catch
             {
