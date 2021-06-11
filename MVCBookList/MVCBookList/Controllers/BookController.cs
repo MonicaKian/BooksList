@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCBookList.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -85,5 +86,43 @@ namespace MVCBookList.Controllers
                 return View();
             }
         }
+
+
+
+        [NonAction]
+        public List<Book> GetBookList()
+        {
+            return new List<Book>{
+      new Book{
+         Id = 1,
+         Name = "Be Kind",
+         Description = "From asking the new girl to play to standing up for someone being bullied, this moving story explores what kindness is, " +
+         "and how any act, big or small, can make a difference—or at least help a friend."
+         
+      },
+
+      new Book{
+         Id = 2,
+         Name = "Panchatantra for Children",
+         Description = "The classic characters in these stories have been brought to life using simple language and attractive illustrations, " +
+         "making Panchatantra for Children a must-have, must-read book for all children."
+          },
+
+      new Book{
+         Id = 3,
+         Name = "The Journey of the Marmabill",
+         Description = "A little marmabill loses her home to a grumpy creature and thus sets off on a mission to find a new home--and " +
+         "she makes some friends along the way"
+             },
+
+      new Book{
+         Id = 4,
+         Name = "I Am the Dog",
+         Description = "The question is: Who has the better deal? Story maestro Daniel Pinkwater collaborates once again with the gifted " +
+         "illustrator Jack E. Davis for a boy-and - dog escapade that's sure to set tails a-wagging"
+          },
+         };
+        }
+
     }
 }
