@@ -17,8 +17,6 @@ namespace MVCBookList.Controllers
                         select e;
 
             return View(books);
-
-
         }
 
         // GET: Book/Details/5
@@ -52,7 +50,9 @@ namespace MVCBookList.Controllers
         // GET: Book/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            List<Book> empList = GetBookList();
+            var book = empList.Single(m => m.Id == id);
+            return View(book);
         }
 
         // POST: Book/Edit/5
