@@ -24,7 +24,8 @@ namespace MVCBookList.Controllers
         // GET: Book/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var book = db.Books.Single(m => m.Id == id);
+            return View(book);
         }
 
         // GET: Book/Create
@@ -82,23 +83,25 @@ namespace MVCBookList.Controllers
         // GET: Book/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var book = db.Books.Single(m => m.Id == id);
+            return View(book);
         }
 
         // POST: Book/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Book bo)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                db.Books.Remove(bo);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
+
         }
 
 
