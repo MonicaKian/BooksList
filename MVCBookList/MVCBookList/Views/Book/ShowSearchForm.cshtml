@@ -1,0 +1,27 @@
+﻿@model MVCBookList.Models.Book
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+    <div class="form-horizontal">
+        <h4>Search for an item or a Book</h4>
+        <hr />
+
+        <form action="ShowSearchResults">
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
