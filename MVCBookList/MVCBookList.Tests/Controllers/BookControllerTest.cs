@@ -8,40 +8,28 @@ namespace MVCBookList.Tests.Controllers
     [TestClass]
     public class BookControllerTest
     {
+
         [TestMethod]
-        public void Index()
+        public void ShowSearchForm()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BookController controller = new BookController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = controller.ShowSearchForm() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void About()
+        public void Creat()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BookController controller = new BookController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }
-
-        [TestMethod]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = controller.Create() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
