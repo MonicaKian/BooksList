@@ -1,9 +1,6 @@
 ﻿using MVCBookList.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MVCBookList.Controllers
@@ -24,9 +21,7 @@ namespace MVCBookList.Controllers
         // GET: Book/ShowSearchForm
         public ActionResult ShowSearchForm()
         {
- 
-
-            return View();
+             return View();
         }
         // POST: Book/ShowSearchResults
         public ActionResult ShowSearchResults(string SearchPhrase)
@@ -86,7 +81,7 @@ namespace MVCBookList.Controllers
                 var book = db.Books.Single(m => m.Id == id);
                 if (TryUpdateModel(book))
                 {
-                    //To Do:- database code
+                   
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
